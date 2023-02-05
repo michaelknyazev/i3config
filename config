@@ -12,6 +12,7 @@ exec --no-startup-id "picom -CGb --config ~/.config/i3/picom.conf"
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 
 floating_modifier $mod
 
