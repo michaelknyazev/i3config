@@ -1,16 +1,16 @@
 set $mod Mod4
 
-font pango:monospace 8
+font pango:Fira Code Retina 8 
 
 exec_always --no-startup-id "$HOME/.config/i3/polybar/launch.sh"
-
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id setxkbmap -option "grp:alt_shift_toggle" -layout "us,ru" 
-exec --no-startup-id "xautolock -detectsleep -time 5 -locker \"i3lock -c 000000 \""
+exec --no-startup-id setxkbmap -option "grp:alt_shift_toggle" -layout "us,ru"
+exec --no-startup-id xinput set-prop 14 "libinput Tapping Enabled" 1 
+#exec --no-startup-id "xautolock -detectsleep -time 5 -locker \"i3lock -c 000000 -f \""
 exec --no-startup-id "playerctld daemon"
 exec --no-startup-id "picom -CGb --config ~/.config/i3/picom.conf"
 exec --no-startup-id dex-autostart --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock -l "i3lock -c 000000"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
@@ -34,7 +34,7 @@ bindsym $mod+Return exec alacritty
 bindsym --release Shift+Print exec "scregcp -s ~/Pictures/Screenshots/"
 bindsym --release Print exec "scregcp ~/Pictures/Screenshots/"
 bindsym $mod+d exec --no-startup-id "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/i3/rofi/launcher.rasi"
-
+bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/i3/rofi/launcher.rasi"
 ## Kill focused app
 bindsym $mod+Shift+q kill
 ## Change focus
@@ -120,7 +120,7 @@ bindsym $mod+r mode "resize"
 gaps outer 1
 gaps inner 8
 
-set $bg #285657
+set $bg #1e1e1e
 set $txt #ad9266
 set $unbg #161503
 
