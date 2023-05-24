@@ -7,8 +7,8 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id setxkbmap -option "grp:alt_shift_toggle" -layout "us,ru"
 exec --no-startup-id xinput set-prop 14 "libinput Tapping Enabled" 1 
 #exec --no-startup-id "xautolock -detectsleep -time 5 -locker \"i3lock -c 000000 -f \""
-exec --no-startup-id "playerctld daemon"
-exec --no-startup-id "picom -CGb --config ~/.config/i3/picom.conf"
+#exec --no-startup-id "playerctld daemon"
+#exec --no-startup-id "picom -CGb --config ~/.config/i3/picom.conf"
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id xss-lock -l "i3lock -c 000000"
 exec --no-startup-id nm-applet
@@ -103,6 +103,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+l exec "i3lock -c 000000"
 
+# Window Settings
+for_window [title="Picture-in-Picture"] sticky enable
+for_window [class="^.*"] border pixel 0
+
 # Resize
 mode "resize" { 
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -118,13 +122,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 gaps outer 1
-gaps inner 8
+gaps inner 1
+hide_edge_borders smart
 
-set $bg #1e1e1e
-set $txt #ad9266
-set $unbg #161503
+set $bg #111122
+#set $bg #E14D4F
+set $txt #B3B0C4
+set $unbg #1e1e1e
+set $hghlt #222233
 
-client.focused		$bg	$bg	$txt	$bg	$bg
+client.focused		$hghlt	$hghlt	$txt	$bg	$unbg
 client.unfocused	$unbg   $unbg   $txt    $unbg   $unbg	
 client.focused_inactive $unbg	$unbg	$txt	$unbg	$unbg
 

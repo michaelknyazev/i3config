@@ -6,5 +6,5 @@
   bga:  #2E2E2EFF;
   fg:   #999999FF;
   ac:   #f0f0f0FF;
-  se:   #EC7875FF;
+  se:   #FFFFFFFF;
 }
