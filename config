@@ -105,7 +105,7 @@ bindsym $mod+Shift+l exec "i3lock -c 000000"
 
 # Window Settings
 for_window [title="Picture-in-Picture"] sticky enable
-for_window [class="^.*"] border pixel 0
+#for_window [class="^.*"] border pixel 0
 
 # Resize
 mode "resize" { 
@@ -123,7 +123,7 @@ bindsym $mod+r mode "resize"
 
 gaps outer 1
 gaps inner 1
-hide_edge_borders smart
+#hide_edge_borders smart
 
 set $bg #111122
 #set $bg #E14D4F
