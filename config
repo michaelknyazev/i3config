@@ -7,8 +7,8 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id setxkbmap -option "grp:alt_shift_toggle" -layout "us,ru"
 exec --no-startup-id xinput set-prop 14 "libinput Tapping Enabled" 1 
 #exec --no-startup-id "xautolock -detectsleep -time 5 -locker \"i3lock -c 000000 -f \""
-#exec --no-startup-id "playerctld daemon"
-#exec --no-startup-id "picom -CGb --config ~/.config/i3/picom.conf"
+exec --no-startup-id "playerctld daemon"
+exec --no-startup-id "picom -CGb --config ~/.config/i3/picom.conf"
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id xss-lock -l "i3lock -c 000000"
 exec --no-startup-id nm-applet
