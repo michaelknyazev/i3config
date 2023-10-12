@@ -35,6 +35,8 @@ bindsym --release Shift+Print exec "scregcp -s ~/Pictures/Screenshots/"
 bindsym --release Print exec "scregcp ~/Pictures/Screenshots/"
 bindsym $mod+d exec --no-startup-id "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/i3/rofi/launcher.rasi"
 bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/i3/rofi/launcher.rasi"
+bindsym $mod+Shift+e exec "rofi -show power-menu -modi power-menu:~/.config/i3/scripts/rofi-power-menu -theme ~/.config/i3/rofi/launcher.rasi"
+
 ## Kill focused app
 bindsym $mod+Shift+q kill
 ## Change focus
@@ -100,7 +102,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # i3 stuff
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+l exec "i3lock -c 000000"
 
 # Window Settings
@@ -121,17 +123,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps outer 1
-gaps inner 1
-#hide_edge_borders smart
+gaps outer 7
+gaps inner 7
+gaps top 50
+gaps bottom 50
 
-set $bg #111122
+hide_edge_borders both
+
+set $bg #232323
 #set $bg #E14D4F
 set $txt #B3B0C4
 set $unbg #1e1e1e
-set $hghlt #222233
+set $hghlt #71DBD4
 
-client.focused		$hghlt	$hghlt	$txt	$bg	$unbg
+client.focused		$hghlt	$hghlt	$bg	$bg	$unbg
 client.unfocused	$unbg   $unbg   $txt    $unbg   $unbg	
 client.focused_inactive $unbg	$unbg	$txt	$unbg	$unbg
 
